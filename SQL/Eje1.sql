@@ -135,12 +135,44 @@ UPDATE public.usuarios
 SET Edad = 30
 WHERE ID = 1
 
-5. Elimina un usuario de la tabla "Usuarios".
-DELETE FROM public.usuarios
+/*5. Elimina un usuario de la tabla "Usuarios".
+DELETE FROM public.usuarios/*
 WHERE ID = 2
 
-1. Crea una tabla llamada "Ciudades" con las columnas: "id" (entero, clave
-primaria), "nombre" (texto) y "pais" (texto).
+/*1. Crea una tabla llamada "Ciudades" con las columnas: "id" (entero, clave
+primaria), "nombre" (texto) y "pais" (texto)./*
+
+/*2. Inserta al menos tres registros en la tabla "Ciudades"./*
+
+INSERT INTO public.ciudades (nombre, país)
+VALUES ('James', 'Colombia') 
+
+INSERT INTO public.ciudades (nombre, país)
+VALUES ('James', 'Inglaterra') 
+
+INSERT INTO public.ciudades (nombre, país)
+VALUES ('María', 'España') 
+
+/*3. Crea una foreign key en la tabla "Usuarios" que se relacione con la columna "id"
+de la tabla "Ciudades"./*
+
+ALTER TABLE public.usuarios 
+ADD CONSTRAINT fk_ciudad FOREIGN KEY (id) REFERENCES ciudades (id)
+
+/*4. Realiza una consulta que muestre los nombres de los usuarios junto con el
+nombre de su ciudad y país (utiliza un LEFT JOIN)./*
+SELECT * FROM public.usuarios 
+LEFT JOIN public.ciudades 
+ON public.usuarios.id = public.ciudades.id 
+
+/*5. Realiza una consulta que muestre solo los usuarios que tienen una ciudad
+asociada (utiliza un INNER JOIN)./*
+
+SELECT * FROM public.usuarios 
+INNER JOIN public.ciudades 
+ON public.usuarios.id = public.ciudades.ID
+
+
 
 
 
