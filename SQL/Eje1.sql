@@ -104,6 +104,15 @@ ADD COLUMN fecha DATE
 
 /*19. Agregar una clave externa a la tabla "Pedidos" que haga referencia a la tabla
 "Productos" en la columna "producto"./*
+ALTER TABLE public.pedidos2
+ADD CONSTRAINT FK_producto_id FOREIGN KEY (id) REFERENCES productos (id)
+
+20. Realizar una consulta que muestre los nombres de los clientes, los nombres de
+los productos y las cantidades de los pedidos donde coincida la clave externa.
+SELECT * FROM public.pedidos2
+LEFT JOIN public.productos
+ON public.pedidos2.id = public.productos.id
+
 
 
 
