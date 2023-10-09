@@ -117,4 +117,33 @@ SELECT * FROM public.pedidos2
 INNER JOIN public.productos
 ON public.pedidos2.id = public.productos.id
 
+/*EJERCICIO 2/*
+/*2. Crea una tabla llamada "Usuarios" con las columnas: "id" (entero, clave
+primaria), "nombre" (texto) y "edad" (entero)./*
+CREATE TABLE IF NOT EXISTS Usuarios (
+ id SERIAL PRIMARY KEY,
+ Nombre VARCHAR (255) NOT NULL,
+ Edad INT
+)
+
+3. Inserta dos registros en la tabla "Usuarios
+INSERT INTO public.usuarios (nombre, edad)
+VALUES ('Pedro', 26)
+
+/*4. Actualiza la edad de un usuario en la tabla "Usuarios"./*
+UPDATE public.usuarios
+SET Edad = 30
+WHERE ID = 1
+
+5. Elimina un usuario de la tabla "Usuarios".
+DELETE FROM public.usuarios
+WHERE ID = 2
+
+1. Crea una tabla llamada "Ciudades" con las columnas: "id" (entero, clave
+primaria), "nombre" (texto) y "pais" (texto).
+
+
+
+
+
 
