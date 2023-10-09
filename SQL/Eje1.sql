@@ -113,6 +113,8 @@ SELECT * FROM public.pedidos2
 LEFT JOIN public.productos
 ON public.pedidos2.id = public.productos.id
 
-
+SELECT * FROM public.pedidos2
+INNER JOIN public.productos
+ON public.pedidos2.id = public.productos.id
 
 
